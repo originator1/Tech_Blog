@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/project/:id', async (req, res) => {
+router.get('/project/:id',withAuth, async (req, res) => {
   try {
     const projectData = await Project.findByPk(req.params.id, {
       include: [
@@ -37,9 +37,10 @@ router.get('/project/:id', async (req, res) => {
         },
       ],
     });
+    console.log('Logging projectData ' + projectData);
 
     const project = projectData.get({ plain: true });
-
+    
     res.render('project', {
       ...project,
       logged_in: req.session.logged_in
@@ -47,6 +48,7 @@ router.get('/project/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+  
 });
 
 // Use withAuth middleware to prevent access to route
@@ -78,5 +80,31 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
+
+//comments url route
+router.get('/comments/:id', async (req, res) => {
+  try {
+    const commentsData = await Project.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    const comment = commentsData.get({ plain: true });
+    console.log('CommentsData Log: ' + comment);
+    res.render('comments', {
+      ...comment,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+  
+});
+
 
 module.exports = router;

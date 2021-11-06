@@ -30,6 +30,10 @@ Project.init(
         key: 'id',
       },
     },
+    // comments: {
+    //   type: DataTypes.STRING,
+    // }
+    
   },
   {
     sequelize,
