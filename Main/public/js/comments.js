@@ -1,29 +1,31 @@
-const newFormHandler = async (event) => {
-    event.preventDefault();
+// const newFormHandler = async (event) => {
+//     event.preventDefault();
   
-    const name = document.querySelector('#project-name').value.trim();
-    //const needed_funding = document.querySelector('#project-funding').value.trim();
-    const description = document.querySelector('#project-desc').value.trim();
-    const comments = document.querySelector('')
+//     // const name = document.querySelector('#project-name').value.trim();
+//     // //const needed_funding = document.querySelector('#project-funding').value.trim();
+//     // const description = document.querySelector('#project-desc').value.trim();
+//     const commentBtn = document.querySelector('.commentBtn')
   
-    if (comments) {
-      const response = await fetch(`/api/projects`, {
-        method: 'POST',
-        body: JSON.stringify({ comments }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+//     if (comments) {
+//       const response = await fetch(`/api/projects`, {
+//         method: 'POST',
+//         body: JSON.stringify({ comments }),
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//       });
   
-      if (response.ok) {
-        document.location.replace('/profile');
-      } else {
-        alert('Failed to create project');
-      }
-    }
-  };
+//       if (response.ok) {
+//         document.location.replace('/profile');
+//       } else {
+//         alert('Failed to create project');
+//       }
+//     }
+//   };
+
   
-  const delButtonHandler = async (event) => {
+
+const commentButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
   
@@ -39,10 +41,10 @@ const newFormHandler = async (event) => {
     }
   };
   
-  document
-    .querySelector('.new-project-form')
-    .addEventListener('submit', newFormHandler);
+  // document
+  //   .querySelector('.new-project-form')
+  //   .addEventListener('submit', newFormHandler);
   
   document
-    .querySelector('.project-list')
-    .addEventListener('click', delButtonHandler);
+    .querySelector('.commentBtn')
+    .addEventListener('click', commentButtonHandler);
