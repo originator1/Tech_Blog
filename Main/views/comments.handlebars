@@ -13,7 +13,7 @@
   </p>
 </div> --}}
 
-<div class='comments-container'>
+  {{!-- <div class='comments-container'>
     <h2>
       Post new comment to this project!
     </h2>
@@ -33,13 +33,25 @@
       <textarea id='description' name='description' rows='5' cols='30'>
         {{comment.description}}
       </textarea>
-      
       <br />
       <br />
-     
-      
-      <button type='submit' value='Submit'>
+     <button type='submit' value='Submit'>
         Submit
       </button>
     </form>
-  </div>
+  </div> --}}
+
+  
+  
+ 
+  <p>COMMENTS.HANDLEBARS</p>
+  <form class="form new-comment-form">
+      <div class="form-group">
+        <label for="new-comment" id="comment-grab">Enter New Comment:</label>
+        {{!-- <input class="form-input" type="text" id="project-name" name="project-name" /> --}}
+        <input class="form-input" type="text" id="new-comment" />
+      </div>
+  </form>
+  <button id="commentBtn">Add Comment</button>
+  
+ <script src="./js/comments.js"></script> 

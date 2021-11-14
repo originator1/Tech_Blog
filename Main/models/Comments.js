@@ -11,8 +11,12 @@ Comments.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    description: {
+    comment: {
       type: DataTypes.STRING,
+      // references: {
+      //   model: 'project',
+      //   key: 'id'
+      // }
     },
     date_created: {
       type: DataTypes.DATE,
@@ -26,12 +30,22 @@ Comments.init(
         key: 'id',
       },
     },
+    // },
+    // comment_id: {
+    //     type: DataTypes.INTEGER,
+    //     references: {
+    //         model: 'project',
+    //         key: 'id',
+    //     }
+        
+    // },
+
     project_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'project',
-            key: 'id',
-        },
+      type: DataTypes.INTEGER,
+      references: {
+          model: 'project',
+          key: 'id',
+      },
     },
   },
   {

@@ -25,14 +25,13 @@ Project.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
+      //uncomment if breaks
       references: {
         model: 'user',
         key: 'id',
       },
     },
-    // comments: {
-    //   type: DataTypes.STRING,
-    // }
+   
     
   },
   {

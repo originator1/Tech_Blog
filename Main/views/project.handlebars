@@ -1,6 +1,6 @@
 <div class="text-center">
-  <h2>{{name}}</h2>
-  {{!-- <p>{{{get_emoji}}}</p> --}}
+  <h2 id="project-name" data-id="{{id}}">{{name}}</h2>
+  <p>PROJECT.HANDLEBARS</p>
   <p>{{description}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
   {{!-- <p>
@@ -8,24 +8,46 @@
     <span class="dollar-amount">{{format_amount needed_funding}}</span>
     needed
   </p> --}}
-  <div class="text-center">
-    <h2>Project Comments:</h2>
-  {{!-- <p>{{{get_emoji}}}</p> --}}
-    <p>{{comments}}</p>
-    <p>Created by {{user.name}} on {{format_date date_created}}.</p>
+  
+  <form class="form new-comment-form">
+      <div class="form-group">
+        <label for="new-comment" id="comment-grab">Enter New Comment:</label>
+        {{!-- <input class="form-input" type="text" id="project-name" name="project-name" /> --}}
+        <input class="form-input" type="text" id="new-comment" />
+      </div>
+  </form>
+  <button id="commentBtn">Add Comment</button>
+  
+  
+  {{!-- COMMENTS LIST --}}
+  <h2>Current Comments: </h2>
+  <div>
+    {{#each comments}}
+    <ul>
+      {{comment}}
+    </ul>
+    {{/each}}
   </div>
-  {{!-- <p>
-    <span for="img" aria-label="money">💲</span>
-    <span class="dollar-amount">{{format_amount needed_funding}}</span>
-    needed
-  </p> --}}
-  <p>
-    <button class="commentBtn btn btn-primary">Post new comment!</button>
-  </p>
+  
+
+  
+  {{!-- <div class="text-center">
+    
+    <button class="commentBtn btn btn-primary">
+      <a href="/comments">Post new comment!</a>
+    </button>
+  </div>  --}}
+  
+  
+  {{!-- {{#each comments}} --}}
+    
+  
+      {{!-- <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button>
+      </div> --}}
+   
+  {{!-- {{/each}} --}}
+ 
+  
 </div>
-  
-  
-  {{!-- <p>
-    <button class="btn btn-primary">Comment</button>
-  </p>
-</div> --}}
+<script src="/js/project.js"></script>

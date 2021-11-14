@@ -11,13 +11,41 @@ Project.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-User.hasMany(Comments, {
+Project.hasMany(Comments, {
   foreignKey: 'project_id',
   onDelete: 'CASCADE'
 });
 
-Project.belongsTo(User, {
-  foreignKey: 'project_id'
+Comments.belongsTo(Project, {
+  foreignKey: 'id'
 });
 
-module.exports = { User, Project };
+
+//added, remove if breaks(first)
+// Comments.belongsTo(Project,{
+//   foreignKey: 'id'
+// });
+
+
+// Comments.belongsTo(Project, {
+//   foreignKey: 'id'
+// });
+
+//newly added
+// Project.hasMany(Comments, {
+//   foreignKey: 'comments_id',
+//   onDelete: 'CASCADE'
+// });
+
+// JUST COMMENTED OUT
+// Project.belongsTo(User, {
+//   foreignKey: 'project_id'
+// });
+
+// Comments.belongsTo(Project, {
+//   foreignKey: 'id'  
+// });
+
+
+
+module.exports = { User, Project, Comments };

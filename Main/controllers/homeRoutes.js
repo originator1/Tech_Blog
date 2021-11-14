@@ -1,6 +1,9 @@
 const router = require('express').Router();
-const { Project, User } = require('../models');
+const { Project, User, Comments} = require('../models');
 const withAuth = require('../utils/auth');
+
+
+//localhost:3001/
 
 router.get('/', async (req, res) => {
   try {
@@ -13,7 +16,7 @@ router.get('/', async (req, res) => {
         },
       ],
     });
-
+    
     // Serialize data so the template can read it
     const projects = projectData.map((project) => project.get({ plain: true }));
 
@@ -27,6 +30,8 @@ router.get('/', async (req, res) => {
   }
 });
 
+//localhost:3001/project/12342
+
 router.get('/project/:id',withAuth, async (req, res) => {
   try {
     const projectData = await Project.findByPk(req.params.id, {
@@ -35,21 +40,31 @@ router.get('/project/:id',withAuth, async (req, res) => {
           model: User,
           attributes: ['name'],
         },
+        {
+          model: Comments,
+          attributes: ['comment'],
+        },
+        
+       
       ],
     });
-    console.log('Logging projectData ' + projectData);
 
     const project = projectData.get({ plain: true });
-    
+  
+  
     res.render('project', {
       ...project,
+    
       logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
-  }
-  
+  };
 });
+  
+
+
+//localhost:3001/profile
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
@@ -83,28 +98,24 @@ router.get('/login', (req, res) => {
 
 
 //comments url route
-router.get('/comments/:id', async (req, res) => {
+router.get('/comments', async (req, res) => {
   try {
-    const commentsData = await Project.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
+    // Get all projects and JOIN with user data
+    const commentsData = await Comments.findAll({
+     
     });
 
-    const comment = commentsData.get({ plain: true });
-    console.log('CommentsData Log: ' + comment);
-    res.render('comments', {
-      ...comment,
-      logged_in: req.session.logged_in
+    // Serialize data so the template can read it
+    const comments = commentsData.map((commentsData) => commentsData.get({ plain: true }));
+   
+    // Pass serialized data and session flag into template
+    res.render('comments', { 
+      ...comments, 
+      logged_in: req.session.logged_in 
     });
   } catch (err) {
     res.status(500).json(err);
   }
-  
 });
-
 
 module.exports = router;
