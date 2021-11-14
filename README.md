@@ -15,7 +15,7 @@ Deployment: Nov 14, 2021
 <!-- Deployed Link -->
 Here you will find a step by step guide on how to navigate through the Tech-Blog application.
 - Open the application on heroku through https://techblogwo.herokuapp.com 
-- This will take you to the applications main page where you will first have to login, or create and account if t his is your first time on the application.
+- This will take you to the applications main page where you will first have to login, or create and account if this is your first time on the application.
 - Once you have created an account or logged in you will be directed to your profile page.
 - Once at your profile page you will have the option to create a post or view all previous posts.
 - create a post simply fill in the name and description field and click create!
