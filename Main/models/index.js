@@ -21,30 +21,7 @@ Comments.belongsTo(Project, {
 });
 
 
-//added, remove if breaks(first)
-// Comments.belongsTo(Project,{
-//   foreignKey: 'id'
-// });
 
-
-// Comments.belongsTo(Project, {
-//   foreignKey: 'id'
-// });
-
-//newly added
-// Project.hasMany(Comments, {
-//   foreignKey: 'comments_id',
-//   onDelete: 'CASCADE'
-// });
-
-// JUST COMMENTED OUT
-// Project.belongsTo(User, {
-//   foreignKey: 'project_id'
-// });
-
-// Comments.belongsTo(Project, {
-//   foreignKey: 'id'  
-// });
 
 
 
