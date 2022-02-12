@@ -15,11 +15,6 @@ User.init(
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
-      //remove if breaks
-      // refrences: {
-      //   model: 'project',
-      //   key: 'id'
-      // }
     },
     name: {
       type: DataTypes.STRING,

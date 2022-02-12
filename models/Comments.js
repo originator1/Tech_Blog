@@ -28,23 +28,7 @@ Comments.init(
         key: 'id',
       },
     },
-    // user_name: {
-    //   type: DataTypes.STRING,
-    //   references: {
-    //     model: 'user',
-    //     key: 'name',
-    //   },
-    // },
-    // },
-    // comment_id: {
-    //     type: DataTypes.INTEGER,
-    //     references: {
-    //         model: 'project',
-    //         key: 'id',
-    //     }
-
-    // },
-
+   
     project_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -53,6 +37,13 @@ Comments.init(
       },
     },
   },
+   // user_name: {
+    //   type: DataTypes.STRING,
+    //   references: {
+    //     model: 'user',
+    //     key: 'name',
+    //   },
+    // },
   {
     sequelize,
     timestamps: false,
