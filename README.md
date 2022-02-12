@@ -10,7 +10,7 @@ Deployment: Nov 14, 2021
 
 
 ## Description
-  Tech blog application where you can create an account, login, and access posts created by others and comment on each post! You can also create your own posts if you wish to! 
+  Tech blog application where you can create an account, login, and access posts created by others and comment on each post! You can also create your own posts and delete them if you wish to! 
 ## User Guide 
 <!-- Deployed Link -->
 Here you will find a step by step guide on how to navigate through the Tech-Blog application.

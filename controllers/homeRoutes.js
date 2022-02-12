@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-//localhost:3001/project/12342
+//localhost:3001/project/:id
 
 router.get('/project/:id',withAuth, async (req, res) => {
   try {
@@ -42,7 +42,7 @@ router.get('/project/:id',withAuth, async (req, res) => {
         },
         {
           model: Comments,
-          attributes: ['comment'],
+          attributes: ['comment', 'date_created'],
         },
         
        
@@ -50,8 +50,8 @@ router.get('/project/:id',withAuth, async (req, res) => {
     });
 
     const project = projectData.get({ plain: true });
-  
-  
+    console.log(project)
+    //render view to handlebars engine and query data as object 
     res.render('project', {
       ...project,
     

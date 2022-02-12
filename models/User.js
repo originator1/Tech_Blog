@@ -16,10 +16,10 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
       //remove if breaks
-      refrences: {
-        model: 'project',
-        key: 'id'
-      }
+      // refrences: {
+      //   model: 'project',
+      //   key: 'id'
+      // }
     },
     name: {
       type: DataTypes.STRING,

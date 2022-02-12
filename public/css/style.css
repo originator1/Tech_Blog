@@ -22,3 +22,22 @@ header, .project:not(:last-child) {
   font-weight: bold;
   margin-left: -5px;
 }
+
+.commentsDiv div {
+  background-color: #73b1ce;
+  border-radius: 10px;
+  margin-bottom: 1vh;
+  font-size: 1.2em;
+}
+
+.homeInfo {
+  background-color: #73b1ce;
+  border: 2px solid rgb(20, 20, 20);
+  border-radius: 15px;
+  padding-top: 1vh;
+}
+
+.homeInfo > h5{
+  font-size: .95em;
+  color: white;
+}

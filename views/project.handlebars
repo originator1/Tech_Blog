@@ -1,3 +1,4 @@
+<h1>PROJECT PAGE</h1>
 <div class="text-center">
   <h2 id="project-name" data-id="{{id}}">{{name}}</h2>
   
@@ -16,12 +17,20 @@
   
   {{!-- COMMENTS LIST --}}
   <h2>Current Comments: </h2>
-  <div>
+  <div class="commentsDiv">
+    
     {{#each comments}}
-    <ul>
-      {{comment}}
-    </ul>
+    <div class="container fluid col-4">
+     
+      <strong>{{comment}}</strong>
+      <br>
+      <em style="color: rgb(233, 233, 233); font-size: .8em;">-{{format_date date_created}}</em>
+      <br>
+      
+      
+    </div>
     {{/each}}
+   
   </div>
   
   

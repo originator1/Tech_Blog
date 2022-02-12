@@ -7,7 +7,6 @@ Project.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
@@ -31,6 +30,13 @@ Project.init(
         key: 'id',
       },
     },
+    // comments: {
+    //   references: {
+    //     model: 'comments',
+    //     key: 
+    //   }
+    // }
+    
    
     
   },
