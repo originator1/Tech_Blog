@@ -6,6 +6,10 @@ header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
 
+.mainContainer {
+  min-height: 940px;
+}
+
 .no-button {
   background: none;
   border: none;
@@ -39,11 +43,14 @@ header, .project:not(:last-child) {
   border: 2px solid rgb(20, 20, 20);
   border-radius: 15px;
   padding-top: 1vh;
+  text-align: start;
+  padding: 2rem;
 }
 
 .homeInfo > h5{
   font-size: .95em;
   color: white;
+  font:italic ;
 }
 
 @media (min-width: 820px) {
